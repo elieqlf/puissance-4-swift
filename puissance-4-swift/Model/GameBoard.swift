@@ -21,4 +21,32 @@ struct GameBoard {
             grille.append(ligne)
         }
     }
+    
+    func getLastRowEmpty(in column: Int) -> Int {
+        var lastRowEmpty = -1
+        for row in 0..<rows {
+            switch grille[row][column] {
+            case .empty:
+                lastRowEmpty = row
+            case .filled:
+                break
+            }
+        }
+        return lastRowEmpty
+    }
+    
+    mutating func drop(in column: Int, as player: Player) -> Int? {
+        let lastRowEmpty = getLastRowEmpty(in: column)
+        
+        // Colonne pleine
+        guard lastRowEmpty != -1 else { return -1}
+        
+        grille[lastRowEmpty][column] = .filled(player)
+        return lastRowEmpty
+    }
+    
+    // On regarde sur des coordonées précice pour ne pas checker toute la grille a chaque tour
+    func checkWin(row: Int, column: Int, player: Player) -> Bool {
+        return false
+    }
 }
