@@ -39,7 +39,7 @@ struct GameBoard {
         let lastRowEmpty = getLastRowEmpty(in: column)
         
         // Colonne pleine
-        guard lastRowEmpty != -1 else { return -1}
+        guard lastRowEmpty != -1 else { return nil }
         
         grille[lastRowEmpty][column] = .filled(player)
         return lastRowEmpty
@@ -47,6 +47,62 @@ struct GameBoard {
     
     // On regarde sur des coordonées précice pour ne pas checker toute la grille a chaque tour
     func checkWin(row: Int, column: Int, player: Player) -> Bool {
+        let directions: [(Int, Int)] = [
+            (0, 1),
+            (1, 0), 
+            (1, 1), 
+            (1, -1) 
+        ]
+        
+        for (dx, dy) in directions {
+            var count = 1 // jeton placé par le joueur
+            
+            // Premier sens
+            var x = row + dx
+            var y = column + dy
+            
+            // On avance tant que :
+            //  - On sort pas de la grille
+            //  - On croise pas un le jeton d'un autre joueur
+            while x >= 0 && y >= 0 && y < columns && x < rows {
+                if case .filled(let p) = grille[x][y], p == player {
+                    count += 1
+                    x += dx
+                    y += dy
+                } else {
+                    break
+                }
+            }
+            
+            // Sens inverse
+            x = row - dx
+            y = column - dy
+            
+            while x >= 0 && y >= 0 && y < columns && x < rows {
+                if case .filled(let p) = grille[x][y], p == player {
+                    count += 1
+                    x -= dx
+                    y -= dy
+                } else {
+                    break
+                }
+            }
+            
+            if count >= 4 {
+                return true
+            }
+        }
         return false
+    }
+    
+    func isFull() -> Bool {
+        for row in grille {
+            for cell in row {
+                if case .empty = cell {
+                    return false
+                }
+            }
+        }
+        return true
     }
 }
