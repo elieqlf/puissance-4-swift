@@ -5,7 +5,7 @@
 //  Created by Elie Calviere on 06/03/2026.
 //
 
-enum Player {
+enum Player: Equatable {
     case player1
     case player2
     
