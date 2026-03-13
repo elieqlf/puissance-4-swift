@@ -9,8 +9,9 @@ import UIKit
 
 class ViewControllerIA: UIViewController {
     
-    @IBOutlet weak var mainStackView: UIStackView! // ← à connecter dans le storyboard
-    @IBOutlet weak var playerLabel: UILabel!       // ← idem
+    @IBOutlet weak var mainStackView: UIStackView!
+    @IBOutlet weak var playerLabel: UILabel!
+    @IBOutlet weak var resetButton: UIButton! // ← à connecter dans le storyboard
     
     var cellViews: [[UIView]] = []
     let gameManager = GameManager()
@@ -18,7 +19,6 @@ class ViewControllerIA: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Peupler cellViews depuis la hiérarchie de vues
         for rowStackView in mainStackView.arrangedSubviews {
             guard let rowStack = rowStackView as? UIStackView else { continue }
             var rowViews: [UIView] = []
@@ -28,19 +28,24 @@ class ViewControllerIA: UIViewController {
             cellViews.append(rowViews)
         }
         
-        // Ajouter le tap sur la grille
         let tap = UITapGestureRecognizer(target: self, action: #selector(boardTapped(_:)))
         mainStackView.isUserInteractionEnabled = true
         mainStackView.addGestureRecognizer(tap)
+        
+        updateLabel()
     }
     
     @objc func boardTapped(_ sender: UITapGestureRecognizer) {
+        // Bloquer les taps si la partie est finie
+        guard case .playing = gameManager.state else { return }
+        
         let location = sender.location(in: mainStackView)
         let columnWidth = mainStackView.bounds.width / 7
         let column = Int(location.x / columnWidth)
         
         gameManager.play(in: column)
         updateBoard()
+        updateLabel()
     }
 
     func updateBoard() {
@@ -59,5 +64,22 @@ class ViewControllerIA: UIViewController {
                 }
             }
         }
+    }
+    
+    func updateLabel() {
+        switch gameManager.state {
+        case .playing(let player):
+            playerLabel.text = player == .player1 ? "🔴 Joueur 1 à toi de jouer" : "🟡 Joueur 2 à toi de jouer"
+        case .won(let player):
+            playerLabel.text = player == .player1 ? "🔴 Joueur 1 a gagné !" : "🟡 Joueur 2 a gagné !"
+        case .draw:
+            playerLabel.text = "Match nul !"
+        }
+    }
+    
+    @IBAction func resetTapped(_ sender: UIButton) {
+        gameManager.reset()
+        updateBoard()
+        updateLabel()
     }
 }
