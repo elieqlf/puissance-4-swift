@@ -368,7 +368,85 @@
                                         <viewLayoutGuide key="safeArea" id="IN2-0z-S5z"/>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="boA-tV-08n"/>
+                                    <constraint firstAttribute="height" constant="320" id="qFJ-sa-Jld"/>
+                                </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJP-XH-wjb">
+                                <rect key="frame" x="167" y="722" width="67.333333333333343" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="J1R-Iu-H8a"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Reset"/>
+                                <connections>
+                                    <action selector="resetButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DPA-Q7-Ma2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGj-TO-AjA">
+                                <rect key="frame" x="16" y="244" width="50" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="columnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NSh-kd-POD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QV1-oN-ij4">
+                                <rect key="frame" x="70" y="244" width="50" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="columnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fPU-bx-6jy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJT-y2-Y5Z">
+                                <rect key="frame" x="124" y="244" width="50" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="columnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Iee-dY-2os"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zML-B0-5rF">
+                                <rect key="frame" x="178" y="244" width="50" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="columnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FRg-Lt-mQs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACd-LH-PTB">
+                                <rect key="frame" x="286" y="244" width="50" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="columnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BZW-dK-j4G"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eqy-WU-8T0">
+                                <rect key="frame" x="340" y="244" width="50" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="columnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BdW-rn-DXo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Je-lD-xmn">
+                                <rect key="frame" x="232" y="244" width="50" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="columnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eF9-1z-Rrz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -386,6 +464,49 @@
                     </view>
                     <connections>
                         <outlet property="playerLabel" destination="fwL-Ev-b0O" id="wHr-0C-XaY"/>
+                        <outlet property="resetButton" destination="QJP-XH-wjb" id="zTa-W1-IOT"/>
+                        <outletCollection property="cells" destination="T69-ou-R7x" collectionClass="NSMutableArray" id="fPG-9D-Uuo"/>
+                        <outletCollection property="cells" destination="fN3-MW-4Sy" collectionClass="NSMutableArray" id="baZ-7O-wnI"/>
+                        <outletCollection property="cells" destination="KLA-hH-UdS" collectionClass="NSMutableArray" id="nBa-E1-Ytu"/>
+                        <outletCollection property="cells" destination="Pfe-jO-fcb" collectionClass="NSMutableArray" id="XzL-Yr-YGc"/>
+                        <outletCollection property="cells" destination="GhL-1C-Ssi" collectionClass="NSMutableArray" id="bmQ-2O-dzc"/>
+                        <outletCollection property="cells" destination="AzP-65-qk3" collectionClass="NSMutableArray" id="EdH-gT-N7P"/>
+                        <outletCollection property="cells" destination="6yT-HJ-DO2" collectionClass="NSMutableArray" id="Wvm-yS-nLE"/>
+                        <outletCollection property="cells" destination="rMX-1V-dcK" collectionClass="NSMutableArray" id="zbm-53-seV"/>
+                        <outletCollection property="cells" destination="PtW-Tv-8Mi" collectionClass="NSMutableArray" id="sIL-CZ-S3w"/>
+                        <outletCollection property="cells" destination="CEa-eu-XvL" collectionClass="NSMutableArray" id="Lme-Md-qOf"/>
+                        <outletCollection property="cells" destination="IDm-nF-dIc" collectionClass="NSMutableArray" id="iFt-R7-tDn"/>
+                        <outletCollection property="cells" destination="AmZ-vf-4PE" collectionClass="NSMutableArray" id="yob-Ls-10n"/>
+                        <outletCollection property="cells" destination="84S-oi-PwY" collectionClass="NSMutableArray" id="fBA-fF-4vP"/>
+                        <outletCollection property="cells" destination="XWu-p8-RMI" collectionClass="NSMutableArray" id="4wA-kC-hIo"/>
+                        <outletCollection property="cells" destination="NNp-51-pUX" collectionClass="NSMutableArray" id="uRM-Fy-1vn"/>
+                        <outletCollection property="cells" destination="RnZ-SS-gKS" collectionClass="NSMutableArray" id="css-V1-oWz"/>
+                        <outletCollection property="cells" destination="U18-Ez-Xwg" collectionClass="NSMutableArray" id="Kl2-Wv-YwH"/>
+                        <outletCollection property="cells" destination="xqa-So-8SX" collectionClass="NSMutableArray" id="mFL-NK-DT4"/>
+                        <outletCollection property="cells" destination="bLQ-Je-8Tm" collectionClass="NSMutableArray" id="1Iy-0A-Wap"/>
+                        <outletCollection property="cells" destination="Gg3-Mh-4rU" collectionClass="NSMutableArray" id="BiP-mM-bMT"/>
+                        <outletCollection property="cells" destination="HcM-Ea-ecm" collectionClass="NSMutableArray" id="nXw-UL-x5q"/>
+                        <outletCollection property="cells" destination="LH0-o7-9mo" collectionClass="NSMutableArray" id="uMM-le-Jqm"/>
+                        <outletCollection property="cells" destination="bfg-U6-7yp" collectionClass="NSMutableArray" id="UKi-py-PLG"/>
+                        <outletCollection property="cells" destination="muW-fb-Bld" collectionClass="NSMutableArray" id="6hy-tW-D58"/>
+                        <outletCollection property="cells" destination="dH0-p2-PAP" collectionClass="NSMutableArray" id="kiG-FB-Dak"/>
+                        <outletCollection property="cells" destination="A5l-T1-qx0" collectionClass="NSMutableArray" id="Wt7-lp-c5x"/>
+                        <outletCollection property="cells" destination="fSP-zL-faK" collectionClass="NSMutableArray" id="cC1-Ef-djj"/>
+                        <outletCollection property="cells" destination="6nh-5b-UUF" collectionClass="NSMutableArray" id="Enl-AR-MLO"/>
+                        <outletCollection property="cells" destination="bau-YZ-cwb" collectionClass="NSMutableArray" id="arQ-ER-vEg"/>
+                        <outletCollection property="cells" destination="nIS-AU-zLd" collectionClass="NSMutableArray" id="KSV-Yb-0wj"/>
+                        <outletCollection property="cells" destination="Wo8-ZL-7AL" collectionClass="NSMutableArray" id="e5Y-gv-o95"/>
+                        <outletCollection property="cells" destination="XW3-We-tH0" collectionClass="NSMutableArray" id="ZNZ-kK-Lqw"/>
+                        <outletCollection property="cells" destination="BDd-On-cGp" collectionClass="NSMutableArray" id="1gZ-Wp-1LY"/>
+                        <outletCollection property="cells" destination="yzd-Tn-MT1" collectionClass="NSMutableArray" id="0ON-zg-frx"/>
+                        <outletCollection property="cells" destination="nLz-mU-03F" collectionClass="NSMutableArray" id="FMd-kW-Mxr"/>
+                        <outletCollection property="cells" destination="k5a-3d-XkJ" collectionClass="NSMutableArray" id="9uY-6P-W5X"/>
+                        <outletCollection property="cells" destination="1rW-wD-3Mu" collectionClass="NSMutableArray" id="L3n-oz-iO5"/>
+                        <outletCollection property="cells" destination="Yhf-jM-cYa" collectionClass="NSMutableArray" id="bd9-GA-hdO"/>
+                        <outletCollection property="cells" destination="BdW-bz-rQw" collectionClass="NSMutableArray" id="K3m-vq-exD"/>
+                        <outletCollection property="cells" destination="SMF-k4-E1n" collectionClass="NSMutableArray" id="Ys8-0d-OTf"/>
+                        <outletCollection property="cells" destination="DwL-xy-Epl" collectionClass="NSMutableArray" id="3Bu-tV-WeI"/>
+                        <outletCollection property="cells" destination="vWA-SP-oc2" collectionClass="NSMutableArray" id="LCO-PT-wfF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
